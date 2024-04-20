@@ -12,7 +12,7 @@ const useSendMessage = () => {
 		user: JSON.parse(localStorage.getItem('chat-user'))
 		}
 		try {
-			const res = await fetch('https://chatapp-ney0.onrender.com'+`/api/messages/send/${selectedConversation._id}`, {
+			const res = await fetch( `/api/messages/send/${selectedConversation._id}`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
