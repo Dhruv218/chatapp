@@ -8,7 +8,7 @@ export const Dashboard = () => {
   useEffect(() => {
     async function get() {
       try {
-        const res = await fetch("api/users/all");
+        const res = await fetch('https://chatapp-ney0.onrender.com'+"/api/users/all");
         const data = await res.json();
         console.log(data);
         setUsers(data);

@@ -8,13 +8,16 @@ const useSendMessage = () => {
 
 	const sendMessage = async (message) => {
 		setLoading(true);
+		const body={message ,
+		user: JSON.parse(localStorage.getItem('chat-user'))
+		}
 		try {
-			const res = await fetch(`/api/messages/send/${selectedConversation._id}`, {
+			const res = await fetch('https://chatapp-ney0.onrender.com'+`/api/messages/send/${selectedConversation._id}`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
 				},
-				body: JSON.stringify({ message }),
+				body: JSON.stringify(body) ,
 			});
 			const data = await res.json();
 			if (data.error) throw new Error(data.error);

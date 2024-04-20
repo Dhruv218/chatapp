@@ -9,7 +9,11 @@ const useGetConversations = () => {
 		const getConversations = async () => {
 			setLoading(true);
 			try {
-				const res = await fetch("/api/users");
+				const res = await fetch('https://chatapp-ney0.onrender.com'+"/api/users",{
+					method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: localStorage.getItem('chat-user'),
+				});
 				const data = await res.json();
 				if (data.error) {
 					throw new Error(data.error);
