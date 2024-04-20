@@ -4,7 +4,7 @@ import { getUsersForSidebar, getallusers } from "../controllers/user.controller.
 
 const router = express.Router();
 
-router.get("/", getUsersForSidebar);
+router.post("/", getUsersForSidebar);
 router.get("/all", getallusers);
 
 export default router;
