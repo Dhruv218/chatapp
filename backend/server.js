@@ -16,16 +16,17 @@ const __dirname = path.resolve();
 
 dotenv.config();
 
-app.use(express.json()); // to parse the incoming requests with JSON payloads (from req.body)
+app.use(express.json()); 
 app.use(cookieParser());
 app.use(cors())
+
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
  
 app.get("*", (req, res) => {
-	res.send('asdad');
+	res.send('hello');
 });
 
 server.listen(PORT, () => {
